@@ -1,0 +1,13 @@
+{
+    "name": "visual",
+    "dependencies": {
+        "bootstrap": "^3.3.7",
+        "bootstrap-datetimepicker": "0.0.7",
+        "lodash": "^4.17.11",
+        "powerbi-models": "^1.0.12"
+    },
+    "devDependencies": {
+        "@types/d3": "3.5.36",
+        "jquery-ui": "^1.12.1"
+    }
+}

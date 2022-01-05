@@ -1,0 +1,306 @@
+
+@import (less) "src/zTree/css/zTreeStyle/zTreeStyle.css";
+@import (less) "src/jquery/jquery-ui-1.12.1.custom/jquery-ui.min.css";
+
+
+
+// #menu-tree .node_name, #tree-menu .node_name, #tableList td {
+//     font-family: Arial, Helvetica, sans-serif;
+// }
+
+
+
+//日期 input 的显示何隐藏
+
+#switch{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height:6px;
+    width: 100%;
+    //background-color: #666
+}
+#triangle{
+    width: 0;
+    height: 0;
+    border-top: 6px solid rgb(162, 170, 170);
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    margin-right: 10px;
+}
+//日期滑块css样式设置
+.ui-slider.ui-slider-horizontal.ui-widget.ui-widget-content.ui-corner-all, .ui-slider-range.ui-widget-header.ui-corner-all{
+    height: 16px;
+    background-color: #666;
+}
+
+#sliderParent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    //width: 90%;
+    height: 50px;
+    overflow: hidden;
+    background-color: transparent;
+}
+#slider{
+    margin:0 24px;
+    width: 100%;
+    background-color: #FFF;   
+    //修改 日期 圆点的大小 和位置  
+    span{
+        // border-radius: 50%;
+        height: 24px;
+        width: 24px;
+        margin-top: -7px; 
+        border-radius: 50%;
+        border:2px solid #333;
+        background-color: #FFF;
+        &.ui-slider-handle.ui-state-default.ui-corner-all:focus {
+            outline: none;
+            border:2px solid #666;
+        }
+    }
+}
+//修改 日期 线条的大小
+.ui-slider.ui-slider-horizontal.ui-widget.ui-widget-content.ui-corner-all, .ui-slider-range.ui-widget-header.ui-corner-all{
+    height: 3.5px;
+}
+
+
+#startDate,#endDate{
+    margin-left:10px;
+    margin-top:8px;
+    border:1px solid #ccc;
+    width:80px;
+    &:hover{
+        border:1px solid #333;
+    }
+    &:checked{
+        border:1px solid #FFF;
+    }
+    
+}
+
+
+a>span:nth-child(2){
+    padding:0px !important;
+    margin: 0px !important;
+}
+
+// li>span:nth-child(2){
+//     border:1px solid #AAA !important;
+// }
+
+li>span:nth-child(2):hover{
+    box-shadow: 0 0 4px #000;
+    //border: 4px solid #666;
+    //border:2px solid #222 !important;
+}
+.span4{
+    height: 100px;
+}
+p {
+    margin: 0;
+}
+
+.title {
+    vertical-align: top;
+    margin-top: 5px;
+    margin-left: 20px;
+}
+.search {
+    float: right;
+    width: 5px;
+    height: 5px;
+    border:#666 solid;
+    border-width: 1px 1px 0 0;
+    transform: rotate(135deg);
+    margin-top: 2px;
+}
+.textDiv {
+    margin-bottom: 5px !important;
+    width: calc(~"100% - 10px");
+    height: 20px;
+    input {
+        width: calc(~"100% - 5px");
+        border: 1px solid rgb(234, 234, 234);
+        border-radius: 2px;
+        height: 100%;
+        margin-left: 10px;
+        // padding-left: 15px;
+    }
+}
+.hiddens{
+    overflow: hidden;
+    height:100%;
+}
+.hiddens:hover{
+    overflow: hidden;
+}
+.scrollDiv {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    &:hover {
+        overflow: auto;
+    }
+}
+#select-tree{
+    overflow: auto;
+    //height:100% !important;
+    // height: 100% !important;
+    // display: none;
+}
+#menu-tree, #select-tree {
+    margin-left: -15px;
+}
+#tree-menu {
+    // margin-left: -10px;
+    // padding:0px !important;
+    overflow:hidden;
+}
+#tree-menu, #menu-tree, #select-tree {
+    a {
+        width: -webkit-calc(~"100% - 50px");
+        width: -moz-calc(~"100% - 50px");
+        width: calc(~"100% - 50px");
+        border: none;
+        background: none;
+        .node_name {
+            padding: 1px 5px;
+            width: 100%;
+            display: inline-block;
+        }
+    }
+}
+#tableList {
+    width: 100%;
+    table {
+        table-layout:fixed;
+        tr {
+            td {
+                text-align: center;
+                padding: 5px 0;
+                word-wrap: break-word;
+            }
+        }
+   }
+}
+// .ztree {
+//     background: #fff;
+    
+// }
+
+.list-container {
+    position: relative;
+    // width: calc(~"100% - 10px");
+    border: 1px solid rgb(234, 234, 234);
+    border-radius: 2px;
+    height: 20px;
+    .list-show {
+        position: absolute;
+        padding-left: 15px;
+        width: calc(~'100% - 15px');
+        height: 100%;
+        line-height: 20px;
+    }
+    .list-arrow-btn {
+        position: absolute;
+        right: 15px;
+        top: calc(~'50% - 7px');
+        width: 10px;
+        height: 10px;
+        border:#666 solid;
+        border-width: 1px 1px 0 0;
+        transform: rotate(135deg);
+        margin-bottom: 10px;
+    }
+    .list-ztree {
+        display: none;
+        position: absolute;
+        width: calc(~"100% + 4px");
+        top: 100%;
+        border: 1px solid rgb(234, 234, 234);
+        border-radius: 2px;
+        overflow: hidden;
+    }
+    .list-ztree:hover {
+        overflow: auto;
+    }
+}
+// ::-webkit-scrollbar-track {
+//     background-color: #fff;
+// }
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background: #c8c8c8;
+}
+
+.ztree li span.button.checkbox_true_part{
+    background-image: none;
+    //background-color: rgb(90, 86, 86);
+    border: 3px solid #fff !important;
+    box-sizing:border-box;
+    width: 15px;
+    height: 15px;
+    background-color: #666;
+}
+
+.ztree li span.button.chk.checkbox_false_full{
+    background-image: none;
+    background-color: transparent;
+}
+
+.ztree li span.button.chk.checkbox_false_full_focus{
+    background-image: none;
+    background-color: transparent;
+}
+
+.ztree li span.button.chk.checkbox_true_full{
+    background-image: none;
+    background-color: #666;
+}
+
+.ztree li span.button.chk.checkbox_true_full_focus{
+    background-image: none;
+    background-color: #666;
+}
+
+//改变图标样式
+// .ztree li span.button.level0{
+//     background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAMCAIAAADd4huNAAAAGUlEQVQoFWOMSGtmIA4wEacMpGpU6VAKAQCeqQFZTcqz1QAAAABJRU5ErkJggg==") !important;
+//     //display: inline-block;
+// }
+// .ztree li span.button.level1{
+//     background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAMCAIAAADd4huNAAAAGUlEQVQoFWOMSGtmIA4wEacMpGpU6VAKAQCeqQFZTcqz1QAAAABJRU5ErkJggg==") !important;
+//     //display: inline-block;
+// }
+// .ztree li span.button.switch{
+//     background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAJCAIAAACwvetYAAABJklEQVQYGU1QXU4CQQyeduYsyquaGD2DwAZ9IDEmXkMSZdfFRDgMWVkgHsENor4S7zIzfp2uYh8637T9vv7Q4fGZidEQ7T7ezK+NiklVr3efTQdZg3ycTfLmfTtfLC1bfF0IngwJ05iDo1PgaCKzhZCKhBgAms12Wo6JeL6oUeOkAvREU4wctJQDb60L3lfLNcSnj2NpQ+RiCK08hkmYIjGx0kTPSx3el9UrwKzMkWJwZLAgk/zxBaf+GsScxIwaGCIwBw5MP8CYAaNKJFVIjoQAmcus+1w83OUlQk67+bSMdEuL/dcSIeJBH5z7UfGEC6ehcBLsnfz31wZHhx/0L9r+3C55ez1En6peoRWOtD9J5+QcpdC+ynq4mNJwQwXZ8EaB+Bh/AKQAqT9t3eRXAAAAAElFTkSuQmCC");
+// }
+
+
+// .ui-datepicker-year{
+//     font-size: 26px
+// }
+// td{
+//     background-color: #000;
+//     font-size: 28px;
+//     // border:2px solid #000;
+//     .ui-state-default{
+//         font-size: 28px;
+//         color:red;
+//     }
+// }    
+// th{
+//     color: red;
+// }
+
+//设置日期样式
+.ui-state-default{
+    font-size: 16px;
+}
