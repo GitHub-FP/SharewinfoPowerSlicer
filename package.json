@@ -1,10 +1,17 @@
 {
     "name": "visual",
+    "scripts": {
+        "lint": "tslint -c tslint.json -p tsconfig.json"
+    },
     "dependencies": {
         "bootstrap": "^3.3.7",
         "bootstrap-datetimepicker": "0.0.7",
+        "lint": "^0.7.0",
         "lodash": "^4.17.11",
-        "powerbi-models": "^1.0.12"
+        "powerbi-models": "^1.0.12",
+        "tslint-microsoftcontrib": "6.2.0",
+        "typescript": "3.0.0",
+        "tslint": "5.18.0"
     },
     "devDependencies": {
         "@types/d3": "3.5.36",
