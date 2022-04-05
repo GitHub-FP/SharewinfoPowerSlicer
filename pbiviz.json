@@ -1,37 +1,25 @@
 {
-  "visual": {
-    "name": "SharewinfoPowerSlicer",
-    "displayName": "SharewinfoPowerSlicer",
-    "guid": "swPowerSlicer_sharewinfo_612350D75BB94427B2E530403CFB0292_danfosi",
-    "visualClassName": "Visual",
-    "version": "1.4.0",
-    "description": "公司:康明斯中国;项目:DBU;截至时间:2023/4/14;",
-    "supportUrl": "http://www.sharewinfo.com/support.html",
-    "gitHubUrl": ""
-  },
-  "apiVersion": "2.6.0",
-  "author": {
-    "name": "fengpan",
-    "email": "fengpan@sharewinfobi.onmicrosoft.com"
-  },
-  "assets": {
-    "icon": "assets/icon.png"
-  },
-  "externalJS": [
-    "node_modules/powerbi-models/dist/models.js",
-    "src/jquery/jquery-2.2.3.min.js",
-    "src/init.js",
-    "src/zTree/js/jquery.ztree.core.js",
-    "src/zTree/js/jquery.ztree.excheck.js",
-    "src/lodash/lodash-full.js",
-    "src/jquery/jquery-ui.min.js",
-    "src/jquery/jq-touch.js"
-  ],
-  "style": "style/visual.less",
-  "capabilities": "capabilities.json",
-  "dependencies": "dependencies.json",
-  "stringResources": [
-    "stringResources/zh-CN.json",
-    "stringResources/en-US.json"
-  ]
+    "visual": {
+        "name": "SharewinfoPowerSlicer",
+        "displayName": "SharewinfoPowerSlicer",
+        "guid": "swPowerSlicer_sharewinfo_612350D75BB94427B2E530403CFB0292_danfosi",
+        "visualClassName": "Visual",
+        "version": "1.0.0",
+        "description": "北京上北智信科技有限公司",
+        "supportUrl": "http://www.sharewinfo.com/support.html",
+        "gitHubUrl": "info@sharewinfo.com"
+    },
+    "apiVersion": "2.6.0",
+    "author": {
+        "name": "北京上北智信科技有限公司",
+        "email": "info@sharewinfo.com"
+    },
+    "assets": {
+        "icon": "assets/icon.png"
+    },
+    "externalJS": null,
+    "style": "style/visual.less",
+    "capabilities": "capabilities.json",
+    "dependencies": null,
+    "stringResources": []
 }
