@@ -35,6 +35,7 @@ import EnumerateVisualObjectInstancesOptions = powerbi.EnumerateVisualObjectInst
 import VisualObjectInstance = powerbi.VisualObjectInstance;
 import DataView = powerbi.DataView;
 import VisualObjectInstanceEnumerationObject = powerbi.VisualObjectInstanceEnumerationObject;
+import IVisualEventService = powerbi.extensibility.IVisualEventService;
 import { VisualSettings } from "./settings";
 
 import * as React from "react";
@@ -46,16 +47,20 @@ export class Visual implements IVisual {
     private settings: VisualSettings;
     private reactRoot: React.ComponentElement<any, any>;
     private cotrOptions: VisualConstructorOptions;
+    private events: IVisualEventService;
+
 
     constructor(options: VisualConstructorOptions) {
         console.log('Visual constructor', options);
         this.cotrOptions = options;
+        this.events = options.host.eventService;
         this.reactRoot = React.createElement(Slice, {});
         this.target = options.element;
         ReactDOM.render(this.reactRoot, this.target);
     }
 
     public update(options: VisualUpdateOptions) {
+      this.events.renderingStarted(options);
         this.settings = Visual.parseSettings(options && options.dataViews && options.dataViews[0]);
         console.log(options);
         console.log("this.settings", this.settings);
@@ -64,6 +69,7 @@ export class Visual implements IVisual {
             settings: this.settings,
             updateOptions: options
         });
+        this.events.renderingFinished(options);
     }
 
     private static parseSettings(dataView: DataView): VisualSettings {

@@ -53,7 +53,6 @@ export function rangeFilter(props: State, start: any, end: any) {
 
 export function inFilter(props: State, values: any = []) {
     const categories = props.updateOptions.dataViews[0].categorical.categories[0];
-
     let target: IFilterColumnTarget = {
         table: categories.source.queryName.substr(0, categories.source.queryName.indexOf('.')),
         column: categories.source.displayName
@@ -62,7 +61,7 @@ export function inFilter(props: State, values: any = []) {
     let filter: any = new models.BasicFilter(target, "In", values);
 
     props.cotrOptions.host.applyJsonFilter(filter, "general", "filter",
-        values ? FilterAction.merge : FilterAction.remove);
+        values.length>0 ? FilterAction.merge : FilterAction.remove);
 }
 
 export function customPersist(props: State, objectName: string, properties: any) {

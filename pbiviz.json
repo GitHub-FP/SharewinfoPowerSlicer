@@ -4,7 +4,7 @@
        "displayName":"SharewinfoPowerSlicer",
        "guid":"swPowerSlicer_sharewinfo_612350D75BB94427B2E530403CFB0292_danfosi",
        "visualClassName":"Visual",
-        "version": "1.0.0",
+       "version": "1.4.0",
         "description": "北京上北智信科技有限公司",
         "supportUrl": "http://www.sharewinfo.com/support.html",
         "gitHubUrl": "info@sharewinfo.com"
