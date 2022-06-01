@@ -1,9 +1,10 @@
 import * as React from "react";
 import {useEffect,useState} from "react";
-import { Checkbox } from 'antd';
+// import { Checkbox } from 'antd';
 import { State } from 'interface/interface';
 import { inFilter,formatterValue } from './utils/utils';
 import powerbi from "powerbi-visuals-api";
+import { Checkbox, CheckboxGroup } from 'rsuite';
 
 const SliderSlice: React.FunctionComponent<State> = (props: State) => {
 
@@ -72,15 +73,21 @@ const SliderSlice: React.FunctionComponent<State> = (props: State) => {
 
   return (
     <>
-      <Checkbox.Group style={{ width: '100%' }} value={checked} onChange={onChange}>
+
+  {/* <div>
+      <Checkbox />
+      <Checkbox> Default</Checkbox>
+      <Checkbox defaultChecked> Checked</Checkbox>
+    </div> */}
+
+      <CheckboxGroup style={{ width: '100%' }} value={checked} onChange={onChange}>
         {
           (data.values||[]).map((d,i)=>{
             return (
               <div>
                 <Checkbox 
-                  data-index={i} 
+                  key={i} 
                   value={d} 
-                  // checked={ checked.indexOf(JSON.stringify({key:i,value:d}))>=0 } 
                 > 
                   {
                     data.source
@@ -93,7 +100,7 @@ const SliderSlice: React.FunctionComponent<State> = (props: State) => {
           })
         }
         
-    </Checkbox.Group>
+    </CheckboxGroup>
     </>
   )
 }

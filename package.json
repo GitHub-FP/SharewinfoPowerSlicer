@@ -7,7 +7,6 @@
         "lint": "tslint -c tslint.json -p tsconfig.json"
     },
     "dependencies": {
-        "@ant-design/icons": "^4.2.2",
         "@babel/polyfill": "7.0.0",
         "@babel/preset-env": "^7.4.5",
         "@babel/runtime": "7.6.0",
@@ -15,11 +14,10 @@
         "@types/d3": "5.7.2",
         "@types/react": "^16.9.49",
         "@types/react-dom": "^16.9.8",
-        "antd": "^4.6.4",
         "core-js": "3.2.1",
         "d3": "5.12.0",
         "powerbi-models": "^1.4.0",
-        "powerbi-visuals-api": "^2.6.2",
+        "powerbi-visuals-api": "^3.8.4",
         "powerbi-visuals-utils-colorutils": "^2.1.0",
         "powerbi-visuals-utils-dataviewutils": "2.2.1",
         "powerbi-visuals-utils-formattingutils": "^4.4.2",
@@ -28,6 +26,7 @@
         "powerbi-visuals-utils-typeutils": "^2.2.1",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
+        "rsuite": "^5.13.1",
         "sharewinfo-utils": "0.0.91"
     },
     "devDependencies": {
