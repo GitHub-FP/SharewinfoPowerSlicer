@@ -4,11 +4,6 @@
             "displayName": "slice Data",
             "name": "slice",
             "kind": "Grouping"
-        },
-        {
-            "displayName": "Measure Data",
-            "name": "measure",
-            "kind": "Measure"
         }
     ],
     "objects": {
@@ -620,15 +615,6 @@
                     "dataReductionAlgorithm": {
                         "top": {}
                     }
-                },
-                "values": {
-                    "select": [
-                        {
-                            "bind": {
-                                "to": "measure"
-                            }
-                        }
-                    ]
                 }
             }
         }

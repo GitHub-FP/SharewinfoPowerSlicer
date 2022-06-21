@@ -32,9 +32,9 @@ import DataViewObjectsParser = dataViewObjectsParser.DataViewObjectsParser;
 export class VisualSettings extends DataViewObjectsParser {
     public general: generalSettings = new generalSettings();
     public loop: loopSettings = new loopSettings();
-    public selection: selectionSettings = new selectionSettings();
-    public item: itemSettings = new itemSettings();
-    public titleItem: titleItemSettings = new titleItemSettings();
+    // public selection: selectionSettings = new selectionSettings();
+    // public item: itemSettings = new itemSettings();
+    // public titleItem: titleItemSettings = new titleItemSettings();
     
     
 }
