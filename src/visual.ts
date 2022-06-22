@@ -33,6 +33,7 @@ import VisualUpdateOptions = powerbi.extensibility.visual.VisualUpdateOptions;
 import IVisual = powerbi.extensibility.visual.IVisual;
 import EnumerateVisualObjectInstancesOptions = powerbi.EnumerateVisualObjectInstancesOptions;
 import VisualObjectInstance = powerbi.VisualObjectInstance;
+import ISelectionManager = powerbi.extensibility.ISelectionManager;
 import DataView = powerbi.DataView;
 import VisualObjectInstanceEnumerationObject = powerbi.VisualObjectInstanceEnumerationObject;
 import IVisualEventService = powerbi.extensibility.IVisualEventService;
@@ -48,11 +49,13 @@ export class Visual implements IVisual {
     private reactRoot: React.ComponentElement<any, any>;
     private cotrOptions: VisualConstructorOptions;
     private events: IVisualEventService;
+    private selectionManager: ISelectionManager;
 
 
     constructor(options: VisualConstructorOptions) {
         console.log('Visual constructor', options);
         this.cotrOptions = options;
+        this.selectionManager = options.host.createSelectionManager();
         this.events = options.host.eventService;
         this.reactRoot = React.createElement(Slice, {});
         this.target = options.element;
@@ -60,6 +63,17 @@ export class Visual implements IVisual {
     }
 
     public update(options: VisualUpdateOptions) {
+
+      let _THIS = this;
+      this.target.addEventListener('contextmenu', (event) => {
+        
+         _THIS.selectionManager.showContextMenu({}, {
+              x: event.clientX,
+              y: event.clientY
+          });
+          event.preventDefault();
+      });
+
       this.events.renderingStarted(options);
         this.settings = Visual.parseSettings(options && options.dataViews && options.dataViews[0]);
         console.log(options);

@@ -624,5 +624,14 @@
     "supportsSynchronizingFilterState": true,
     "sorting": {
         "default": {}
+    },
+    "tooltips": {
+        "supportedTypes": {
+            "default": true,
+            "canvas": true
+        },
+        "roles": [
+            "tooltips"
+        ]
     }
 }
